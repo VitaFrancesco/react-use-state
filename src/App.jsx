@@ -1,12 +1,13 @@
-import { useState } from 'react'
-import './App.css'
+import InfoSection from './InfoSection'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-
+      <header>
+        <h1>Learn web development</h1>
+      </header>
+      <InfoSection />
     </>
   )
 }
