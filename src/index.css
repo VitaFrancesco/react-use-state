@@ -31,5 +31,9 @@ h1 {
 .container {
   max-width: 1024px;
   margin: auto;
-  padding: 8px;
+  padding: 10px;
+}
+
+main {
+  margin: 30px 0;
 }

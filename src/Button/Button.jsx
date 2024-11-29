@@ -1,8 +1,8 @@
 import style from './Button.module.css'
 
-export default function Button(language) {
-    const { title, description } = language;
+export default function Button({ language, callback, id }) {
+
     return (
-        <button>{title}</button>
+        <button onClick={callback()}>{language}</button>
     )
 }
