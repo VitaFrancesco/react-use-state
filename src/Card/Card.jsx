@@ -1,14 +1,11 @@
 import style from './Card.module.css'
 
-export default function Card({ language }) {
-    if (language) {
-        return (
-            <div className={style.card}>
-                <h2>{language.title}</h2>
-                <p>{language.description}</p>
-            </div>
-        )
-    } else {
-        console.log('ciao')
-    }
-}
+export default function Card({ isOpen, content }) {
+
+    return (
+        <div className={content ? style.card : style.dNone}>
+            <h2>{content ? content.title : ''}</h2>
+            <p>{content ? content.description : ''}</p>
+        </div>
+    )
+} 

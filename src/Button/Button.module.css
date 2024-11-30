@@ -5,3 +5,8 @@ button {
     color: white;
     padding: 5px 10px;
 }
+
+.active {
+    background-color: rgb(255, 217, 25);
+    color: black;
+}

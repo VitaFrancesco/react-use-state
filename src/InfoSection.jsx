@@ -5,14 +5,10 @@ import style from './InfoSection.module.css'
 import { useState } from 'react'
 
 export default function InfoSection() {
-    const { selectBut, setSelectbut } = useState(null);
-    function writeCard() {
-        const language = languages.find((el) => (el.id === selectBut));
-        if (language) {
-            return language;
-        } else {
-            return null
-        }
+    const [currentId, setCurrentId] = useState(null);
+
+    function currentLanguage(id) {
+        currentId === id ? setCurrentId(null) : setCurrentId(id);
     }
 
     return (
@@ -21,11 +17,11 @@ export default function InfoSection() {
                 <div className={style.menu}>
                     {
                         languages.map(element => {
-                            return <Button key={element.id} id={element.id} language={element.title} callBack={setSelectbut(element.id)} />
+                            return <Button key={element.id} id={element.id} title={element.title} callback={() => currentLanguage(element.id)} active={element.id === currentId ? true : false} />
                         })
                     }
                 </div>
-                <Card language={writeCard()} />
+                <Card content={languages.find((el) => el.id === currentId)} />
             </section>
         </main>
     )

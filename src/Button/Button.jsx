@@ -1,8 +1,7 @@
 import style from './Button.module.css'
 
-export default function Button({ language, callback, id }) {
-
+export default function Button({ title, callback, active }) {
     return (
-        <button onClick={callback()}>{language}</button>
+        <button onClick={callback} className={active ? style.active : ''}>{title}</button>
     )
 }
